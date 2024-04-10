@@ -1,14 +1,14 @@
 import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
-    .then((response) => {
-        const result = [];
-        for (const data of response) {
-          if (data.status === 'fulfilled')
-            result.push({ status: data.status, value: data.value });
-          else result.push({ status: data.status, value: `${data.reason}` });
-        }
-        return result;
+    .then((results) => {
+      const array = [];
+      for (const result of results) {
+        if (result.status === 'fulfilled') array.push({ status: result.status, value: result.value });
+        else array.push({ status: result.status, value: `${result.reason}` });
+      }
+      return array;
     });
 }
