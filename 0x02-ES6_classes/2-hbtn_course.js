@@ -2,9 +2,9 @@ export default class HolbertonCourse {
   /* eslint-disable no-underscore-dangle */
 
   constructor(name, length, students) {
-    this.name = name;
-    this.length = length;
-    this.students = students;
+    this._name = name;
+    this._length = length;
+    this._students = students;
   }
 
   get name() {
