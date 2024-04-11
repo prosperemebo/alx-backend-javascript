@@ -5,4 +5,9 @@ export default class Pricing {
     this._amount = amount;
     this._currency = currency;
   }
+
+  set amount(amount) {
+	if (typeof amount === 'number') this._amount = amount;
+	else throw new TypeError('Amount ')
+  }
 }
