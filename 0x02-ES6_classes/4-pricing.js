@@ -1,9 +1,11 @@
 import Currency from './3-currency';
 
 export default class Pricing {
+  /* eslint-disable no-underscore-dangle */
+
   constructor(amount, currency) {
-    this._amount = amount;
-    this._currency = currency;
+    this.amount = amount;
+    this.currency = currency;
   }
 
   get amount() {
@@ -23,7 +25,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return `${this._amount} ${this._currency.displayFullCurrency()}`;
+    return `${this.amount} ${this.currency.displayFullCurrency()}`;
   }
 
   static convertPrice(amount, conversionRate) {
