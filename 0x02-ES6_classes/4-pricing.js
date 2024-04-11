@@ -1,5 +1,3 @@
-import Currency from './3-currency';
-
 export default class Pricing {
   /* eslint-disable no-underscore-dangle */
 
@@ -25,7 +23,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return `${this.amount} ${this.currency.displayFullCurrency()}`;
+    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
   }
 
   static convertPrice(amount, conversionRate) {
