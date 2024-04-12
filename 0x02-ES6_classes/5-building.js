@@ -2,11 +2,11 @@ export default class Building {
   /* eslint-disable no-underscore-dangle */
   constructor(sqft) {
     if (
-      this.constructor !== Building &&
-      this.evacuationWarningMessage === undefined
+      this.constructor !== Building
+      && this.evacuationWarningMessage === undefined
     ) {
       throw new Error(
-        'Class extending Building must override evacuationWarningMessage'
+        'Class extending Building must override evacuationWarningMessage',
       );
     }
 
